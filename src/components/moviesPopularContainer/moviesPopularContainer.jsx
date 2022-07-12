@@ -1,20 +1,37 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+// import axios from 'axios';
+import React, { useState, useEffect, useContext } from 'react';
 import MoviesPopular from './../moviesPopular/moviesPopular';
-
-const movies = []
-axios.get(
-    'https://api.themoviedb.org/3/discover/movie?api_key=804e095a9ef1fdc1237eaceaf753ca44&sort_by=popularity.desc'
-).then((res) => {(res.data.results.forEach((e) => {movies.push(e)}))})
+import { MovieContext } from './../movieContext/movieContext';
+import SearchBar from '../searchBar/searchBar';
 
 const MoviesPopularContainer = () => {
 
-    const [data, setData] = useState(movies);
+    // const [data, setData] = useState([]);
+    // const [search, setSearch, ] = useState('');
+    // const [result, setResult] = useState([]);
 
-    return (
+    const { movies, getMoviesPopular, getMoviesSearch } = useContext(MovieContext)
+
+    // const handleSearch = (e) => setSearch(e.target.value);
+    
+    
+    // useEffect(() => {
+    //     getMoviesPopular()
+    //     // if(movies !== ''){
+    //     //     getMoviesSearch(movies)
+    //     // };
+    // }, [movies]);
+
+    return (        
         <div>
+            {/* <form>
+                <label htmlFor='search'>Bucar</label>
+                <input type='text' name='search' id='search' value={search} onChange={handleSearch}/>
+                <button type='submit'>Buscar</button>
+            </form> */}
+            <SearchBar/>
             <h1>PELICULAS POPULARES</h1>
-            <MoviesPopular data = {data} />
+            <MoviesPopular data = {movies} key = {movies.id}/> 
         </div>
     );
 };

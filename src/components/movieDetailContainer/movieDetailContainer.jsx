@@ -10,15 +10,15 @@ const MovieDetailContainer = (() => {
     const {movieId} = useParams();
 
     
-    useEffect(async () => {
-        await axios.get(
+    useEffect(() => {
+        axios.get(
             `https://api.themoviedb.org/3/movie/${movieId}?api_key=804e095a9ef1fdc1237eaceaf753ca44`
         ).then((res) => setDataDetail(res.data))
     }, [movieId])
 
     return (
         <div>
-        <   MovieDetail movie = {dataDetail}/>
+        <   MovieDetail movie = {dataDetail} key = {dataDetail.id} />
         </div>
     );    
 });

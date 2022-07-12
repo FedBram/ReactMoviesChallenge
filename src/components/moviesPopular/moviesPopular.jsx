@@ -8,7 +8,7 @@ const MoviesPopular = ({data}) => {
             <div className="movies__cards">
                 {data.map((e) => {
                     return (
-                        < Movie data = {e} key = {e} />
+                        < Movie data = {e} key = {e.id} />
                     )
                 })}
             </div>
