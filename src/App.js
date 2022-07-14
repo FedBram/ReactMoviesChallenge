@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import {MovieProvider} from './components/movieContext/movieContext';
-import MoviesPopularContainer from './components/moviesPopularContainer/moviesPopularContainer';
+import MoviesDicoveryContainer from './components/moviesDicoveryContainer/moviesDicoveryContainer';
 import MovieDetailContainer from './components/movieDetailContainer/movieDetailContainer';
-import SearchBar from './components/searchBar/searchBar';
+
 
 function App() {
   return (
@@ -14,8 +14,7 @@ function App() {
         <div className="App">
           <main className="App-header">
             <Routes>
-              <Route exact path = '/' element = {<MoviesPopularContainer/>}/>
-              {/* <Route exact path = '/' element = {<SearchBar/>}/> */}
+              <Route exact path = '/' element = {<MoviesDicoveryContainer/>}/>
               <Route exact path = '/movie/:movieId' element = {<MovieDetailContainer/>}/>
             </Routes>
           </main>
