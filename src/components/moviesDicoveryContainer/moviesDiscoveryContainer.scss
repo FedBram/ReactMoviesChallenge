@@ -1,0 +1,22 @@
+.moviesDiscoveryContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin-top: 50px;
+    .moviesDiscoveryContainer__header {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0px 20%;
+        h2 {
+            font-size: 1em;
+            margin-right: 50px;
+        }
+        .moviesDiscoveryContainer__filter {
+            margin-left: 50px;
+            background-color: black;
+            height: 100px;
+        }
+    }
+}

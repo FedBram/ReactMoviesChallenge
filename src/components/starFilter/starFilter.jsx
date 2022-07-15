@@ -9,28 +9,17 @@ const StarFilter = () => {
     const [activeStar, setActiveStar] = useState(-1);
     const totalStars = 5;
 
-    const {filterByRating, getMoviesPopular, filteredMovies} = useContext(MovieContext)
+    const {filterByRating, setActiveFilter} = useContext(MovieContext)
 
     const handleClick = (index) => {
         if(index === activeStar){
             setActiveStar(-1)
-            // filterByRating(-1)
-            getMoviesPopular()
+            filterByRating(-1)
+            setActiveFilter(false)
         }else{
-            if(filteredMovies.length !== 0){
-                let param = (index * 2) + 1
-                setActiveStar(index);
-                filterByRating((index + 1) * 2, param);
-                return (
-                    <p>No hay peliculas para mostrar</p>
-                )
-            }else{
-                let param = (index * 2) + 1
-                setActiveStar(index);
-                filterByRating((index + 1) * 2, param);
-            }
             let param = (index * 2) + 1
             setActiveStar(index);
+            setActiveFilter(true)
             filterByRating((index + 1) * 2, param);
         };
     };
@@ -46,8 +35,8 @@ const StarFilter = () => {
       >
         {[...new Array(totalStars)].map((arr, index) => {
           return (
-            <>
             <Box
+              key = {index}
               position="relative"
               sx={{
                 cursor: 'pointer',
@@ -61,13 +50,12 @@ const StarFilter = () => {
                   position: 'absolute',
                 }}
               >
-                <StarIcon />                
+                <StarIcon/>                
               </Box>
               <Box>
-                <StarBorderIcon />
+                <StarBorderIcon/>
               </Box>
             </Box>
-            </>
           );
         })}
       </Box>
