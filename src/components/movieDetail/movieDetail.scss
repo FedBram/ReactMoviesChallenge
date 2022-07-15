@@ -1,30 +1,84 @@
 .movie {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     padding-top: 50px;
-    margin: 0px 15%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),;
+    height: 600px;
+    color: #fff;
+    .movie__img {
+        width: 330px;
+        height: 500px;
+        margin-left: 200px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
   
 .movie__info {
-    width: 440px;
-    text-align: left;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    align-content: center;
+    margin-top: 100px;
+    margin-left: 75px;
     font-size: 1.2em;
-}
+    .movie__info__title {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        max-width: 600px;
+        .movie__info__title__detail {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+    }
+    .movie__info__rating {
+        display: flex;
+        flex-flow: row;
+        width: 130px;
+        margin-top: 25px;
+        justify-content: space-between;
+        .movie__info__rating__score {
+            display: block;
+            min-width: 70px;
+            height: 70px;
+            padding-top: 5px;
+            background-color: yellow;
+            border-radius: 100px;
+            color: #000;
+            font-size: 2em;
+            text-align: center;
+        }
+        span {
+            display: block;
+            padding-top: 7px;
+            font-size: .9em;
+        }
+    }
+    .movie__info__description {
+        width: 700px;
+        margin: 65px 0px;
+        text-align: left;
+        span {
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #aaa
 
-.movie__info__description {
-    width: 290px;
-    margin: 30px 0px;
-    h5 {
-        font-size: 0.9em;
-        margin-bottom: 20px;
-    }
-    h6 {
-        font-size: 0.8em;
-        margin-bottom: 10px;
-    }
-    span {
-        display: block;
-        margin-bottom: 20px;
+        }
+        h5 {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: .8em;
+            display: block;
+            margin-bottom: 20px;
+        }
     }
 }

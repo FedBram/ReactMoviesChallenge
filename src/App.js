@@ -5,6 +5,7 @@ import './App.css';
 import {MovieProvider} from './components/movieContext/movieContext';
 import MoviesDicoveryContainer from './components/moviesDicoveryContainer/moviesDicoveryContainer';
 import MovieDetailContainer from './components/movieDetailContainer/movieDetailContainer';
+import NavBar from './components/navBar/navBar';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <div className="App">
           <main className="App-header">
+            <NavBar/>
             <Routes>
               <Route exact path = '/' element = {<MoviesDicoveryContainer/>}/>
               <Route exact path = '/movie/:movieId' element = {<MovieDetailContainer/>}/>
